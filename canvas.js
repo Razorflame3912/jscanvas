@@ -4,6 +4,7 @@ var clearbutton = document.getElementById("clear");
 var togglebutton = document.getElementById("toggle");
 var shape = 0;
 
+ctx.fillStyle="red";
 
 
 var clear = function(e){
@@ -24,12 +25,12 @@ var toggle = function(e){
 var draw = function(e){
     ctx.beginPath();
     if(shape == 0){
-	ctx.arc(e.x,e.y,10,0,2 * Math.PI);
+	ctx.arc(e.clientX-this.offsetLeft,e.clientY-this.offsetTop,10,0,2 * Math.PI);
+	ctx.fill();
     }
     else{
-	ctx.fillRect(e.x,e.y,10,10);
+	ctx.fillRect(e.clientX-this.offsetLeft,e.clientY-this.offsetTop,20,20);
     }
-    ctx.stroke();
 };
 
 
