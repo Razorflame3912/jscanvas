@@ -31,8 +31,8 @@ var toggle = function(e){
 var draw = function(e){
     if(shape == 0){
 	ctx.beginPath();
-	moveTo(e.offsetX,e.offsetY);
 	ctx.arc(e.offsetX,e.offsetY,10,0,2 * Math.PI);
+	ctx.moveTo(e.offsetX,e.offsetY);
 	if(started != 0){
 	    ctx.lineTo(oldX,oldY);
 	}
